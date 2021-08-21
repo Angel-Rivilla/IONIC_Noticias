@@ -1,0 +1,23 @@
+<app-header 
+          titulo= "Favoritos">
+
+</app-header>
+
+<ion-content color="dark">
+
+    <ion-slides *ngIf="datalocalSvc.noticias.length === 0">
+        <ion-slide>
+        
+            <ion-label>No hay Favoritos</ion-label>
+
+        </ion-slide>
+    </ion-slides>
+
+    <app-noticias 
+                [noticias]="datalocalSvc.noticias"
+                *ngIf="datalocalSvc.noticias.length > 0"
+                [enFavoritos]="true">
+    
+    </app-noticias>
+
+</ion-content>
